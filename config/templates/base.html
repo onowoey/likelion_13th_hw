@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIKELION 13th Week 3</title>
+    <style>
+        .navbar {
+            background-color: #e6f2ff;
+            padding: 14px 28px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+          }
+        
+        .navbar-link {
+            color: #004080;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 8px 14px;
+            border-radius: 8px; 
+          }
+        .body-container{
+            margin: 30px;
+        }
+        h1{
+            margin: 20px;
+            font-size: 50px;
+        }
+        h2{
+            font-size: 20px;
+            background-color: rgba(173, 216, 230, 0.4);
+            border-radius: 6px;
+            display: inline-block;
+        }
+        nav{
+            
+        }
+
+    </style>
+</head>
+
+<body class="body-container">
+    <nav class="navbar">
+        <a class="navbar-link" href="{% url 'mainpage' %}">Main</a>
+        <a class="navbar-link" href="{% url 'secondpage' %}">Second page</a>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+</body>
+
+</html>

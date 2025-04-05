@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <h1>강아지와 나</h1>
+    <div>
+        <h2>🐶강아지</h2>
+        <img src="{% static 'images/별이.png' %}" alt="사진1" width="200px">
+        <img src="{% static 'images/별이3.png' %}" alt="사진2" width="200px">
+        <p> 
+            이름: ⭐️별이⭐️ <br>
+            나이: 15살 <br>
+            별이의 tmi 5가지:
+            <ul>
+                <li>입천장이 까맣다</li>
+                <li>고구마를 너무 너무 좋아해서 5키로가 넘은 적이 있음</li>
+                <li>산책을 싫어해서 절대 걷지 않고 안겨서 감</li>
+                <li>혼자 있으면 화장실도 잘 안 감</li>
+                <li>최근에 털을 빡빡 깎았음</li>
+                <img src="{% static 'images/별이2.png' %}" alt="사진3" width="100px">
+            </ul>
+        </p>
+    </div>
+    <div>
+        <h2>나 ~~❤️</h2>
+        <p>나의 tmi 5가지
+            <ul>
+                <li>불닭볶음면을 정말 조아함 거의 밤마다 먹음</li>
+                <li>뿅맥을 진짜 자주 마심</li>
+                <li>작년에 맹장수술해서 맹장 없음</li>
+                <li>집이랑 학교랑 가까운데 지금까지 절반은 지각햇음 </li>
+                <li>매우매우매우 뻣뻣해서 요즘 밤마다 스트레칭하려 노력중</li>
+
+            </ul>
+        </p>
+    </div>
+{% endblock %}
