@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 def mainpage(request):
     context = {
-        "generation": 13,
+        "generation": 2,
         "info": {'variable': '변수', 'tag': '태그', 'filter': '필터'},
     }
     return render(request, 'main/mainpage.html', context)
