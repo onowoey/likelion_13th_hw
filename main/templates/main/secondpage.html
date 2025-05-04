@@ -2,34 +2,20 @@
 {% load static %}
 {% block content %}
 
-    <h1>강아지와 나</h1>
+    <h1>Secondpage</h1>
     <div>
-        <h2>🐶강아지</h2>
-        <img src="{% static 'images/별이.png' %}" alt="사진1" width="200px">
-        <img src="{% static 'images/별이3.png' %}" alt="사진2" width="200px">
-        <p> 
-            이름: ⭐️별이⭐️ <br>
-            나이: 15살 <br>
-            별이의 tmi 5가지:
-            <ul>
-                {% for feature in features %}
-                <li>{{ feature }}</li>
-                {% endfor %}
-            </ul>
-            <img src="{% static 'images/별이2.png' %}" alt="사진3" width="100px">
-        </p>
+        {% for post in posts %}
+            <div>
+            <hr/>
+            <h3>{{post.title}}</h3>
+            {{post.author}} | {{post.date}}<br>
+            {{post.summary}}<br>
+            <br>
+            {{post.update_date}}<br>
+            <a href="{% url 'main:detail' post.id %}">자세히 보기</a>
+            <br>
+            </div>
+        {% endfor %}
     </div>
-    <div>
-        <h2>나 ~~❤️</h2>
-        <p>나의 tmi 5가지
-            <ul>
-                <li>불닭볶음면을 정말 조아함 거의 밤마다 먹음</li>
-                <li>뿅맥을 진짜 자주 마심</li>
-                <li>작년에 맹장수술해서 맹장 없음</li>
-                <li>집이랑 학교랑 가까운데 지금까지 절반은 지각햇음 </li>
-                <li>매우매우매우 뻣뻣해서 요즘 밤마다 스트레칭하려 노력중</li>
-
-            </ul>
-        </p>
-    </div>
+    
 {% endblock %}

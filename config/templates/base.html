@@ -35,8 +35,8 @@
 
 <body class="body-container">
     <nav class="navbar">
-        <a class="navbar-link" href="{% url 'mainpage' %}">Main</a>
-        <a class="navbar-link" href="{% url 'secondpage' %}">Second page</a>
+        <a class="navbar-link" href="{% url 'main:mainpage' %}">Main</a>
+        <a class="navbar-link" href="{% url 'main:secondpage' %}">Second page</a>
     </nav>
     {% block content %}
 
