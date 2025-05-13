@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static  %}
+{% block content %}
+<h1>마이페이지에 오신 것을 환영합니다</h1>
+<h3>{{user.profile.nickname }}님 안녕하세요</h3>
+<h3>{{user.profile.school }}에서 {{user.profile.grade }}학년 재학 중입니다</h3>
+
+<h1>내가 쓴 글 목록</h1>
+    {% for post in postlist %}
+    <a href="{% url 'main:detail' post.id %}"><div>
+            <br>
+            제목: {{post.title}}<br>
+            날짜: {{post.date}}<br>
+            내용: {{post.summary}}<br>
+        </div></a>
+        <hr>
+    {% endfor %}
+{% endblock %}
