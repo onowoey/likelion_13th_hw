@@ -7,8 +7,7 @@ from accounts.models import *
 # Create your views here.
 def mypage(request, id):
     user = get_object_or_404(User, pk = id)
-    profile, created = Profile.objects.get_or_create(user=user)
-    postlist = Post.objects.filter(author= profile.nickname) 
+    postlist = Post.objects.filter(author=user) 
     context = {
         'user': user,
         'postlist':postlist

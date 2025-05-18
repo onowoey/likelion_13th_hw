@@ -10,5 +10,8 @@ urlpatterns = [
     path('<int:id>', detail, name="detail"),
     path('edit/<int:id>', edit, name="edit"),
     path('update/<int:id>', update, name="update"),
-    path('delete/<int:id>', delete, name="delete")
+    path('delete/<int:id>', delete, name="delete"),
+    path('tag-lists', tag_list, name="tag_list"),
+    path('tag-posts/<int:tag_id>', tag_post, name="tag_post"),
+    path('comment-delete/<int:post_id>/<int:comment_id>', comment_delete, name='comment_delete'),
 ]
