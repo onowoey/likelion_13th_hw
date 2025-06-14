@@ -17,6 +17,8 @@ class Post(models.Model):
     update_date = models.DateTimeField()
     image = models.ImageField(upload_to="blog/", blank=True, null=True)
     tags = models.ManyToManyField(Tag, related_name= 'posts', blank=True)
+    like = models.ManyToManyField(User, related_name='likes', blank=True)
+    like_count = models.PositiveIntegerField(default=0)
     
     def __str__(self):
         return self.title #관리자(admin) 페이지나 셸 등에서 Post 객체를 문자열로 표현할 때 title 필드를 대표값처럼 보여주겠다

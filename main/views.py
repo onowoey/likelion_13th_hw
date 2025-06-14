@@ -31,6 +31,20 @@ def detail(request,id):
         new_comment.date = timezone.now()
         new_comment.save()
         return redirect('main:detail', id)
+    
+def likes(request, post_id):
+    post = get_object_or_404(Post, id = post_id)
+    if request.user in post.like.all():
+        post.like.remove(request.user)
+        post.like_count -= 1
+        post.save()
+    else:
+        post.like.add(request.user)
+        post.like_count += 1
+        post.save()
+        
+    return redirect('main:detail', post.id)
+        
 
 def edit(request, id):##수정중
     edit_post = Post.objects.get(pk=id)
